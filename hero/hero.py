@@ -139,8 +139,15 @@ class Hero:
         # 4) if one of them has died, print "HeroName won!" replacing HeroName with the name of the hero, and end the fight loop
             if len(self.abilities) > 0:
                 print(f"{opponent.name} won!")
+                self.add_kill(1)
+                opponent.add_death(1)
+                return f"{self.name}"
             else:
                 print(f"{self.name} won!")
+                self.add_death(1)
+                opponent.add_kill(1)
+                return f"{opponent.name}"
+        
 
     def add_weapon(self, weapon):
         '''Add weapon to self.abilities'''
