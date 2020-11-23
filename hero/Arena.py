@@ -1,7 +1,7 @@
 from Ability import Ability
 from Weapon import Weapon
 from Armor import Armor
-from Team import Team
+from hero import Hero
 
 class Arena:
     def __init__(self, team_one, team_two):
@@ -46,7 +46,7 @@ class Arena:
         #  return the new armor object with values set by user.
         name = input("What is the armor name?  ")
         max_damage = input(
-            "What is the max damage of the armor?  ")
+            "What is the max protection of the armor?  ")
 
         return Weapon(name, max_damage)
 
@@ -96,7 +96,7 @@ class Arena:
         # Prompt the user for the number of Heroes on team two
         # call self.create_hero() for every hero that the user wants to add to team two.
         # Add th
-        numOfTeamMembers = int(input("How many members would you like on Team One?\n"))
+        numOfTeamMembers = int(input("How many members would you like on Team Two?\n"))
         for i in range(numOfTeamMembers):
             hero = self.create_hero()
             self.team_two.add_hero(hero)
